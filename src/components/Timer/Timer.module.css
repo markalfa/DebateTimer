@@ -327,6 +327,21 @@
     gap: 1rem;
     padding: 0.75rem;
   }
+
+  .timerControls {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .controlsRow {
+    gap: 0.75rem;
+  }
+
+  .controlButton {
+    padding: 0.75rem 1rem;
+    min-width: 70px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -355,5 +370,25 @@
   .timeStats {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .timerControls {
+    padding: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .controlsRow {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .controlButton {
+    padding: 0.5rem 0.75rem;
+    min-width: 60px;
+    font-size: 0.75rem;
+  }
+
+  .controlsInstructions {
+    font-size: 0.8rem;
   }
 }
