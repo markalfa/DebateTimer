@@ -38,8 +38,6 @@ export function DebateScreen() {
 
   const currentSpeaker = getCurrentSpeaker();
   const nextSpeakerData = getNextSpeaker();
-  const currentTeam = getCurrentTeam();
-  const opposingTeam = getOpposingTeam();
 
   const handleStart = () => {
     if (state.phase === 'setup') {
