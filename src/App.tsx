@@ -1,9 +1,8 @@
-import React from 'react';
 import { DebateProvider, SettingsProvider } from './context';
 import { StartScreen } from './components/StartScreen';
 import { DebateScreen } from './components/DebateScreen';
 import { useDebateState } from './hooks';
-import styles from './App.css';
+import styles from './App.module.css';
 
 function AppContent() {
   const { state } = useDebateState();
