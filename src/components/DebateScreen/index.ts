@@ -1,0 +1,1 @@
+export { DebateScreen } from './DebateScreen';
