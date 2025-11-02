@@ -1,0 +1,361 @@
+.topicDisplay {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.topicDisplay:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.topicDisplay.editing {
+  border: 2px solid #1976d2;
+  box-shadow: 0 4px 20px rgba(25, 118, 210, 0.2);
+}
+
+/* Header variant - for main debate screen */
+.headerVariant {
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.headerVariant .topicHeader {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.headerVariant .phaseIndicator {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.headerVariant .bookmarkIcon {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.headerVariant .editButton {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.headerVariant .editButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.headerVariant .saveButton {
+  background: #4caf50;
+  color: white;
+}
+
+.headerVariant .topicText {
+  color: white;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.headerVariant .metadataLabel {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.headerVariant .metadataValue {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Card variant - for setup screens */
+.cardVariant {
+  padding: 2rem;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+}
+
+.cardVariant .topicHeader {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardVariant .topicText {
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.cardVariant .metadataLabel {
+  color: #666;
+}
+
+.cardVariant .metadataValue {
+  color: #333;
+}
+
+/* Compact variant - for small displays */
+.compactVariant {
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+}
+
+.compactVariant .topicHeader {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.compactVariant .topicText {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.compactVariant .metadataLabel {
+  color: #666;
+}
+
+.compactVariant .metadataValue {
+  color: #333;
+}
+
+/* Common styles */
+.topicHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phaseInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.phaseIndicator {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bookmarkIcon {
+  opacity: 0.8;
+}
+
+.editButton,
+.saveButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.editButton {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.editButton:hover {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.saveButton {
+  background: #4caf50;
+  color: white;
+}
+
+.saveButton:hover {
+  background: #45a049;
+}
+
+.topicContent {
+  margin-bottom: 1rem;
+}
+
+.topicText {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.topicMetadata {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.metadataItem {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.metadataLabel {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.metadataValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.topicStatus {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.statusBar {
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+/* No topic state */
+.noTopic {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.noTopicText {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.selectTopicButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.selectTopicButton:hover {
+  background: #1565c0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .headerVariant {
+    padding: 1rem 1.5rem;
+  }
+
+  .cardVariant {
+    padding: 1.5rem;
+  }
+
+  .compactVariant {
+    padding: 0.75rem;
+  }
+
+  .headerVariant .topicText {
+    font-size: 1.5rem;
+  }
+
+  .cardVariant .topicText {
+    font-size: 1.3rem;
+  }
+
+  .compactVariant .topicText {
+    font-size: 1.1rem;
+  }
+
+  .topicMetadata {
+    gap: 1rem;
+  }
+
+  .metadataItem {
+    gap: 0.25rem;
+  }
+
+  .phaseInfo {
+    gap: 0.5rem;
+  }
+
+  .noTopic {
+    padding: 1.5rem;
+  }
+
+  .noTopicText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerVariant {
+    padding: 0.75rem 1rem;
+  }
+
+  .cardVariant {
+    padding: 1rem;
+  }
+
+  .compactVariant {
+    padding: 0.5rem;
+  }
+
+  .headerVariant .topicText {
+    font-size: 1.2rem;
+  }
+
+  .cardVariant .topicText {
+    font-size: 1.1rem;
+  }
+
+  .compactVariant .topicText {
+    font-size: 1rem;
+  }
+
+  .topicMetadata {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .topicHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .phaseInfo {
+    justify-content: center;
+  }
+
+  .headerVariant .editButton,
+  .headerVariant .saveButton {
+    align-self: center;
+  }
+
+  .noTopic {
+    padding: 1rem;
+  }
+
+  .selectTopicButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
