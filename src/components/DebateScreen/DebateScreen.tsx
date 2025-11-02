@@ -10,8 +10,6 @@ export function DebateScreen() {
     state,
     getCurrentSpeaker,
     getNextSpeaker,
-    getCurrentTeam,
-    getOpposingTeam,
     isDebateActive,
     isDebateCompleted,
     nextSpeaker,
