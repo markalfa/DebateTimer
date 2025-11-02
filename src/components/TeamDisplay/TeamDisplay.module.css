@@ -1,0 +1,425 @@
+.teamDisplay {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.teamDisplay.activeTeam {
+  border-color: #1976d2;
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.2);
+}
+
+.leftTeam {
+  margin-right: 1rem;
+}
+
+.rightTeam {
+  margin-left: 1rem;
+}
+
+.teamHeader {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  text-align: center;
+}
+
+.teamName {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.teamStats {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.speakerCount {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.currentSpeakerSection {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+  text-align: center;
+}
+
+.currentSpeakerLabel {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.currentSpeakerName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.currentSpeakerRole {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.currentSpeakerTime {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.nextSpeakerSection {
+  padding: 1rem;
+  background: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nextSpeakerLabel {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.nextSpeakerName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.nextSpeakerRole {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.speakerList {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.speakerListTitle {
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.speakers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.speaker {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.speaker:hover {
+  background: #e9ecef;
+  transform: translateX(4px);
+}
+
+.speaker.currentSpeaker {
+  background: linear-gradient(135deg, #e8f5e8, #c8e6c8);
+  border-left-color: #4caf50;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+}
+
+.speaker.nextSpeaker {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  border-left-color: #ff9800;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+}
+
+.speaker.upcomingSpeaker {
+  background: #f8f9fa;
+  border-left-color: #e0e0e0;
+}
+
+.speakerOrder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.currentSpeaker .speakerOrder {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.nextSpeaker .speakerOrder {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: white;
+}
+
+.speakerInfo {
+  flex: 1;
+}
+
+.speakerName {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.speakerRole {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.speakerTime {
+  font-size: 0.8rem;
+  color: #888;
+  font-family: 'Courier New', monospace;
+}
+
+.speakerStatus {
+  margin-left: 0.5rem;
+}
+
+.statusCurrent,
+.statusNext,
+.statusUpcoming {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statusCurrent {
+  background: #4caf50;
+  color: white;
+}
+
+.statusNext {
+  background: #ff9800;
+  color: white;
+}
+
+.statusUpcoming {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.teamSummary {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.summaryItem:last-child {
+  margin-bottom: 0;
+}
+
+.summaryLabel {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.summaryValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .leftTeam {
+    margin-right: 0.5rem;
+  }
+
+  .rightTeam {
+    margin-left: 0.5rem;
+  }
+
+  .teamName {
+    font-size: 1.5rem;
+  }
+
+  .currentSpeakerName {
+    font-size: 1.3rem;
+  }
+
+  .speaker {
+    padding: 0.75rem;
+  }
+
+  .speakerOrder {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .teamDisplay {
+    margin: 0.5rem 0;
+  }
+
+  .leftTeam,
+  .rightTeam {
+    margin: 0.5rem 0;
+  }
+
+  .teamHeader {
+    padding: 1rem;
+  }
+
+  .teamName {
+    font-size: 1.3rem;
+  }
+
+  .currentSpeakerSection {
+    padding: 1rem;
+  }
+
+  .currentSpeakerName {
+    font-size: 1.2rem;
+  }
+
+  .speakerList {
+    padding: 1rem;
+  }
+
+  .speaker {
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .speakerOrder {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .speakerInfo {
+    width: 100%;
+  }
+
+  .speakerStatus {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .teamSummary {
+    padding: 0.75rem;
+  }
+
+  .summaryItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamHeader {
+    padding: 0.75rem;
+  }
+
+  .teamName {
+    font-size: 1.1rem;
+  }
+
+  .currentSpeakerSection {
+    padding: 0.75rem;
+  }
+
+  .currentSpeakerName {
+    font-size: 1rem;
+  }
+
+  .speakerList {
+    padding: 0.75rem;
+  }
+
+  .speakerListTitle {
+    font-size: 1rem;
+  }
+
+  .speaker {
+    padding: 0.5rem;
+  }
+
+  .speakerOrder {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  .speakerName {
+    font-size: 0.9rem;
+  }
+
+  .speakerRole {
+    font-size: 0.8rem;
+  }
+
+  .speakerTime {
+    font-size: 0.75rem;
+  }
+
+  .teamSummary {
+    padding: 0.5rem;
+  }
+
+  .summaryLabel {
+    font-size: 0.75rem;
+  }
+
+  .summaryValue {
+    font-size: 0.8rem;
+  }
+}
