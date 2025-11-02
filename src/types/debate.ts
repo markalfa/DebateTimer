@@ -1,3 +1,5 @@
+import { TimerState } from './timer';
+
 export interface Team {
   id: string;
   name: string;
