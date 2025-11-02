@@ -1,0 +1,235 @@
+.timerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 400px;
+  position: relative;
+}
+
+.phaseIndicator {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timerDisplay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.timer {
+  font-family: 'Courier New', monospace;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  line-height: 1;
+  transition: color 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer.normal {
+  color: #4caf50;
+}
+
+.timer.warning {
+  color: #ffc107;
+  animation: pulse 2s infinite;
+}
+
+.timer.critical {
+  color: #ff9800;
+  animation: pulse 1s infinite;
+}
+
+.timer.overtime {
+  color: #f44336;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.progressRing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+}
+
+.progressRingBackground {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 8;
+}
+
+.progressRingProgress {
+  fill: none;
+  stroke-width: 8;
+  transition: stroke-dashoffset 0.3s ease;
+  stroke-linecap: round;
+}
+
+.speakerInfo {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.speakerName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.speakerRole {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.statusIndicators {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.statusWarning,
+.statusCritical,
+.statusOvertime {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 0.25rem;
+}
+
+.statusWarning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.statusCritical {
+  background: #fed7d7;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.statusOvertime {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.6; }
+}
+
+.timeStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+}
+
+.timeStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.statValue {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .timerContainer {
+    padding: 1.5rem;
+    min-height: 350px;
+  }
+
+  .timer {
+    font-size: 3.5rem;
+  }
+
+  .progressRing {
+    width: 250px;
+    height: 250px;
+  }
+
+  .speakerName {
+    font-size: 1.3rem;
+  }
+
+  .speakerRole {
+    font-size: 1rem;
+  }
+
+  .timeStats {
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timerContainer {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .timer {
+    font-size: 2.5rem;
+  }
+
+  .progressRing {
+    width: 200px;
+    height: 200px;
+  }
+
+  .phaseIndicator {
+    font-size: 1rem;
+  }
+
+  .speakerName {
+    font-size: 1.1rem;
+  }
+
+  .timeStats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
